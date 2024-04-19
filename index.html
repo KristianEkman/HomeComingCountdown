@@ -37,9 +37,9 @@
           const hours = Math.floor((ms % DAY) / HOUR);
           const minutes = Math.floor((ms % HOUR) / MIN);
           const seconds = Math.floor((ms % MIN) / SEC);
-          countdownElement.innerHTML = `Home in: ${days} days ${hours}h ${minutes}m ${seconds}s`;
+          countdownElement.innerHTML = `See you in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
         } else {
-          countdownElement.innerHTML = "She is home!";
+          countdownElement.innerHTML = "Welcome home!";
           clearInterval(interval);
         }
       }
