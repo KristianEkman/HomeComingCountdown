@@ -37,7 +37,7 @@
           const hours = Math.floor((ms % DAY) / HOUR);
           const minutes = Math.floor((ms % HOUR) / MIN);
           const seconds = Math.floor((ms % MIN) / SEC);
-          countdownElement.innerHTML = `See you in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+          countdownElement.innerHTML = `See you in: ${days}d ${hours}h ${minutes}m ${seconds}s <span style="color: red;">❤️</span>`;
         } else {
           countdownElement.innerHTML = "Welcome home!";
           clearInterval(interval);
