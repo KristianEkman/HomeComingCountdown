@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown to Steff's Homecoming</title>
+    <title>Countdown to Homecoming</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,9 +34,9 @@
                 const minutes = Math.floor((timeToSteffHome % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeToSteffHome % (1000 * 60)) / 1000);
 
-                countdownElement.innerHTML = `Steff's home in: ${days} d, ${hours} h, ${minutes} min, ${seconds} sec`;
+                countdownElement.innerHTML = `Home in: ${days} d, ${hours} h, ${minutes} min, ${seconds} sec`;
             } else {
-                countdownElement.innerHTML = "Steff is home!";
+                countdownElement.innerHTML = "She is home!";
                 clearInterval(interval);
             }
         }
