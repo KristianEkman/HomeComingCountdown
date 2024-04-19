@@ -26,19 +26,18 @@
 
       function updateCountdown() {
         const now = new Date();
-        const timeToSteffHome = steffHome - now;
+        const ms = steffHome - now;
+        const SEC = 1000;
+        const MIN = SEC * 60;
+        const HOUR = MIN * 60;
+        const DAY = HOUR * 24;
 
-        if (timeToSteffHome > 0) {
-          const days = Math.floor(timeToSteffHome / (1000 * 60 * 60 * 24));
-          const hours = Math.floor(
-            (timeToSteffHome % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          );
-          const minutes = Math.floor(
-            (timeToSteffHome % (1000 * 60 * 60)) / (1000 * 60)
-          );
-          const seconds = Math.floor((timeToSteffHome % (1000 * 60)) / 1000);
-
-          countdownElement.innerHTML = `Home in: ${days} d, ${hours} h, ${minutes} min, ${seconds} sec`;
+        if (ms > 0) {
+          const days = Math.floor(ms / DAY);
+          const hours = Math.floor((ms % DAY) / HOUR);
+          const minutes = Math.floor((ms % HOUR) / MIN);
+          const seconds = Math.floor((ms % MIN) / SEC);
+          countdownElement.innerHTML = `Home in: ${days} days ${hours}:${minutes}:${seconds}`;
         } else {
           countdownElement.innerHTML = "She is home!";
           clearInterval(interval);
